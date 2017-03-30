@@ -7,7 +7,7 @@
     "index.js"
   ],
   "engines": {
-    "node": ">=4"
+    "node": ">=7.6"
   },
   "scripts": {
     "test": "mocha"
