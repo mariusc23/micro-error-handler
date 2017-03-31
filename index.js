@@ -1,8 +1,8 @@
 const { send } = require('micro')
 
-const errorHandler = next => (req, res) => {
+const errorHandler = next => async (req, res) => {
   try {
-    return next(req, res)
+    return await next(req, res)
   } catch (err) {
     const code = err.statusCode || 500
     const message = err.message || 'Unknown Error'
