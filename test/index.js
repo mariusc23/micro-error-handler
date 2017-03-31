@@ -8,7 +8,7 @@ describe('errorHandler', () => {
   const res = {
     getHeader() {},
     setHeader() {},
-    end: sinon.spy()
+    end: sinon.spy(),
   }
   const middleware = [errorHandler]
 
@@ -18,14 +18,14 @@ describe('errorHandler', () => {
 
   it('should call handler', () => {
     const handler = sinon.spy()
-    const result = applyMiddleware(middleware, handler)()
+    applyMiddleware(middleware, handler)()
     expect(handler.calledOnce).to.equal(true)
   })
 
   it('should send formatted response', () => {
     const ERROR_MESSAGE = 'ERROR_MESSAGE'
     const handler = () => { throw new Error(ERROR_MESSAGE) }
-    const result = applyMiddleware(middleware, handler)(req, res)
+    applyMiddleware(middleware, handler)(req, res)
     const expectedResponse = JSON.stringify({
       error: {
         code: 500,
@@ -40,7 +40,7 @@ describe('errorHandler', () => {
     const err = new Error(ERROR_MESSAGE)
     err.statusCode = 401
     const handler = () => { throw err }
-    const result = applyMiddleware(middleware, handler)(req, res)
+    applyMiddleware(middleware, handler)(req, res)
     const expectedResponse = JSON.stringify({
       error: {
         code: err.statusCode,
