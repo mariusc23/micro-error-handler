@@ -26,13 +26,13 @@
   },
   "homepage": "https://github.com/mariusc23/micro-error-handler#readme",
   "devDependencies": {
-    "@mariusc23/micro-middleware": "^1.0.0",
+    "@mariusc23/micro-middleware": "^2.0.1",
     "chai": "^3.5.0",
-    "micro": "^7.3.0",
+    "micro": "^8.0.0",
     "mocha": "^3.2.0",
     "sinon": "^2.1.0"
   },
   "peerDependencies": {
-    "micro": "^7.3.0"
+    "micro": "^8.0.0"
   }
 }
