@@ -1,6 +1,6 @@
 {
   "name": "@mariusc23/micro-error-handler",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Error handler middleware for micro.",
   "main": "index.js",
   "files": [
